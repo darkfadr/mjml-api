@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "mjml",
+  "alias": ["mjml.now.sh"],
+  "builds": [
+    { "src": "next.config.js", "use": "@now/next" },
+    {
+      "src": "src/index.js",
+      "use": "@now/node",
+      "config": { "maxLambdaSize": "20mb" }
+    }
+  ],
+  "routes": [
+    { 
+      "src": "/render",
+      "methods": ["POST"],
+      "dest": "src/index.js" 
+    }
+  ]
+}
