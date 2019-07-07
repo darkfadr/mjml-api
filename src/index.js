@@ -4,13 +4,11 @@ const mjml = require('mjml');
 module.exports = async (req, res) => {
   try {
     const body = await json(req); 
-    const output = mjml(body.mjml);
+    const {html} = mjml(body.mjml);
 
     return send(res, 200, {
       success: true,
-      data: {
-        mjml: output.html
-      }
+      data: { html }
     });
   } catch(err) {
     console.log('error', err);
