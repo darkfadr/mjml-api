@@ -4,7 +4,6 @@
   "description": "just a demo",
   "main": "index.js",
   "scripts": {
-
     "build": "next build",
     "now-build": "next build",
     "dev:web": "next",
